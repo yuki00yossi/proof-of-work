@@ -119,16 +119,6 @@ export function WelcomeDialog() {
                 >
                   サイトを見る
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-slate-700 bg-slate-900/50 text-white hover:bg-slate-900/80"
-                  asChild
-                >
-                  <Link href="/connect">
-                    <Discord className="mr-2 h-4 w-4" />
-                    Discordに参加
-                  </Link>
-                </Button>
               </div>
             </motion.div>
           </DialogContent>

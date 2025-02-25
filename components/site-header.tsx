@@ -242,13 +242,14 @@ export function SiteHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center gap-4">
-            <Button
-              size="lg"
-              className="bg-[#5865F2] px-3 text-white hover:from-blue-700 hover:to-emerald-700"
+            <a
+              href="https://discord.gg/FNvEtA9n"
+              className="flex items-center justify-center bg-[#5865F2] hover:bg-[#5865F2]/80 rounded px-3 py-2 text-white"
+              target="_blank"
             >
               <FaDiscord className="mr-3 h-full" />
               参加する
-            </Button>
+            </a>
           </nav>
         </div>
       </div>

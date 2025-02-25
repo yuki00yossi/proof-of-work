@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Building2,
@@ -15,14 +15,19 @@ import {
   Shield,
   Wallet,
   XCircle,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { BackgroundBeams } from "@/components/background-beams"
-import { TracingBeam } from "@/components/tracing-beam"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { BackgroundBeams } from "@/components/background-beams";
+import { TracingBeam } from "@/components/tracing-beam";
 
 export default function CompaniesPage() {
   return (
@@ -66,11 +71,11 @@ export default function CompaniesPage() {
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               最も効率的な
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block pt-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                 エンジニア採用 & 開発支援モデル
               </span>
             </h1>
-            <p className="mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
+            <p className="block pt-5 mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
               契約不要・手数料ゼロで、世界中の開発者と直接つながる。
               <br className="hidden sm:inline" />
               ProofOfWorkDAOが、あなたの開発プロジェクトを加速します。
@@ -89,7 +94,7 @@ export default function CompaniesPage() {
               className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
               asChild
             >
-              <Link href="/contact">
+              <Link href="https://discord.gg/FNvEtA9n">
                 <Building2 className="mr-2 h-5 w-5" />
                 導入について相談する
               </Link>
@@ -100,15 +105,15 @@ export default function CompaniesPage() {
               className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
               asChild
             >
-              <Link href="/whitepaper">
+              {/* <Link href="/whitepaper">
                 企業向け資料をダウンロード
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </Link> */}
             </Button>
           </motion.div>
 
           {/* 統計情報 */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -129,14 +134,14 @@ export default function CompaniesPage() {
                 <div className="text-sm text-slate-400">コスト削減</div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       <TracingBeam>
         {/* 企業が抱える課題 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +152,9 @@ export default function CompaniesPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 従来の開発手法には、こんな課題があります
               </h2>
-              <p className="mt-4 text-lg text-slate-400">クラウドソーシングや従来の外注開発が抱える問題点</p>
+              <p className="mt-4 text-lg text-slate-400">
+                クラウドソーシングや従来の外注開発が抱える問題点
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-2">
               <motion.div
@@ -164,7 +171,9 @@ export default function CompaniesPage() {
                       <DollarSign className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">高額な開発コスト</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        高額な開発コスト
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         フリーランスプラットフォームの手数料（10〜20%）が発生し、中間マージンで開発コストが膨らみます。
                       </p>
@@ -186,7 +195,9 @@ export default function CompaniesPage() {
                       <Clock className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">開発スピードの遅さ</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        開発スピードの遅さ
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         案件ごとに契約・交渉が必要で、開発着手までに時間がかかり、プロジェクトが遅延するリスクがあります。
                       </p>
@@ -208,7 +219,9 @@ export default function CompaniesPage() {
                       <Shield className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">エンジニアのスキルが不透明</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        エンジニアのスキルが不透明
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         ポートフォリオの信頼性が不明で、適切な人材を選びにくい状況が発生します。
                       </p>
@@ -230,8 +243,12 @@ export default function CompaniesPage() {
                       <FileCheck className="h-6 w-6 text-pink-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">契約や支払いの手間</h3>
-                      <p className="mt-3 text-slate-400">都度の契約処理が面倒で、支払い管理も煩雑になりがちです。</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        契約や支払いの手間
+                      </h3>
+                      <p className="mt-3 text-slate-400">
+                        都度の契約処理が面倒で、支払い管理も煩雑になりがちです。
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -242,7 +259,7 @@ export default function CompaniesPage() {
 
         {/* ProofOfWorkDAOの解決策 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -253,7 +270,9 @@ export default function CompaniesPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOなら、開発の手間を大幅に削減！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">企業向けの3つの大きなメリット</p>
+              <p className="mt-4 text-lg text-slate-400">
+                企業向けの3つの大きなメリット
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -270,7 +289,9 @@ export default function CompaniesPage() {
                       <Wallet className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">コスト削減</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        コスト削減
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         手数料ゼロ & 無駄な中間コストなし。
                         <br />
@@ -294,7 +315,9 @@ export default function CompaniesPage() {
                       <Rocket className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">開発スピードの向上</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        開発スピードの向上
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         契約不要で、すぐに開発がスタート。
                         <br />
@@ -318,7 +341,9 @@ export default function CompaniesPage() {
                       <Github className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">優秀なエンジニアと直接つながる</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        優秀なエンジニアと直接つながる
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         GitHub貢献が可視化され、スキルが明確。
                         <br />
@@ -334,7 +359,7 @@ export default function CompaniesPage() {
 
         {/* クラウドソーシングとの比較 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,35 +383,53 @@ export default function CompaniesPage() {
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                           <CheckCircle className="h-6 w-6 text-emerald-500" />
                         </div>
-                        <h3 className="text-xl font-semibold text-white">ProofOfWorkDAO</h3>
+                        <h3 className="text-xl font-semibold text-white">
+                          ProofOfWorkDAO
+                        </h3>
                       </div>
                       <div className="mt-8 space-y-6">
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-6 w-6 shrink-0 text-emerald-500" />
                           <div>
-                            <div className="font-medium text-white">手数料ゼロ</div>
-                            <div className="text-sm text-slate-400">中間マージンなしで直接取引</div>
+                            <div className="font-medium text-white">
+                              開発コストの最適化
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              実際の貢献に応じたコスト分配
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-6 w-6 shrink-0 text-emerald-500" />
                           <div>
-                            <div className="font-medium text-white">契約不要</div>
-                            <div className="text-sm text-slate-400">GitHub連携のみでスタート</div>
+                            <div className="font-medium text-white">
+                              契約不要
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              GitHub連携のみでスタート
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-6 w-6 shrink-0 text-emerald-500" />
                           <div>
-                            <div className="font-medium text-white">スキル評価が透明</div>
-                            <div className="text-sm text-slate-400">GitHub実績で可視化</div>
+                            <div className="font-medium text-white">
+                              スキル評価が透明
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              GitHub実績で可視化
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-6 w-6 shrink-0 text-emerald-500" />
                           <div>
-                            <div className="font-medium text-white">即日開発開始</div>
-                            <div className="text-sm text-slate-400">手続き不要ですぐスタート</div>
+                            <div className="font-medium text-white">
+                              即日開発開始
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              手続き不要ですぐスタート
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -396,35 +439,53 @@ export default function CompaniesPage() {
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-500/10">
                           <XCircle className="h-6 w-6 text-red-500" />
                         </div>
-                        <h3 className="text-xl font-semibold text-white">従来のクラウドソーシング</h3>
+                        <h3 className="text-xl font-semibold text-white">
+                          従来のクラウドソーシング
+                        </h3>
                       </div>
                       <div className="mt-8 space-y-6">
                         <div className="flex items-start gap-3">
                           <XCircle className="h-6 w-6 shrink-0 text-red-500" />
                           <div>
-                            <div className="font-medium text-white">10〜20%の手数料</div>
-                            <div className="text-sm text-slate-400">プラットフォーム利用料が発生</div>
+                            <div className="font-medium text-white">
+                              10〜20%の手数料
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              プラットフォーム利用料が発生
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <XCircle className="h-6 w-6 shrink-0 text-red-500" />
                           <div>
-                            <div className="font-medium text-white">都度の契約が必要</div>
-                            <div className="text-sm text-slate-400">契約手続きに時間がかかる</div>
+                            <div className="font-medium text-white">
+                              都度の契約が必要
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              契約手続きに時間がかかる
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <XCircle className="h-6 w-6 shrink-0 text-red-500" />
                           <div>
-                            <div className="font-medium text-white">スキル評価が不透明</div>
-                            <div className="text-sm text-slate-400">自己申告のポートフォリオ</div>
+                            <div className="font-medium text-white">
+                              スキル評価が不透明
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              自己申告のポートフォリオ
+                            </div>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <XCircle className="h-6 w-6 shrink-0 text-red-500" />
                           <div>
-                            <div className="font-medium text-white">開発開始まで時間がかかる</div>
-                            <div className="text-sm text-slate-400">数日〜数週間の準備期間</div>
+                            <div className="font-medium text-white">
+                              開発開始まで時間がかかる
+                            </div>
+                            <div className="text-sm text-slate-400">
+                              数日〜数週間の準備期間
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -438,7 +499,7 @@ export default function CompaniesPage() {
 
         {/* 企業の利用方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -449,7 +510,9 @@ export default function CompaniesPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOの導入方法
               </h2>
-              <p className="mt-4 text-lg text-slate-400">3つの活用方法から、ニーズに合わせて選択できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                3つの活用方法から、ニーズに合わせて選択できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -465,7 +528,9 @@ export default function CompaniesPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Code2 className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">オープンソース開発</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      オープンソース開発
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       自社プロダクトにOSSを活用し、
                       <br />
@@ -496,7 +561,9 @@ export default function CompaniesPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Wallet className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">PoWTでの報酬支払い</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      PoWTでの報酬支払い
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       GitHub経由で開発者に
                       <br />
@@ -527,7 +594,9 @@ export default function CompaniesPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <LineChart className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">月額プラン</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      月額プラン
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       長期的な開発体制を
                       <br />
@@ -551,7 +620,7 @@ export default function CompaniesPage() {
 
         {/* FAQ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -562,10 +631,12 @@ export default function CompaniesPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 よくある質問
               </h2>
-              <p className="mt-4 text-lg text-slate-400">企業からよくいただく質問にお答えします</p>
+              <p className="mt-4 text-lg text-slate-400">
+                企業からよくいただく質問にお答えします
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
-              <Card className="border-slate-800 bg-slate-900/50">
+              <Card className="border-slate-800 bg-slate-900/50 px-3">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-slate-800">
                     <AccordionTrigger className="text-white hover:text-white">
@@ -599,7 +670,7 @@ export default function CompaniesPage() {
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -610,14 +681,16 @@ export default function CompaniesPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOで、開発を加速させましょう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">まずは気軽にご相談ください</p>
+              <p className="mt-4 text-lg text-slate-400">
+                まずは気軽にご相談ください
+              </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button
                   size="lg"
                   className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
                   asChild
                 >
-                  <Link href="/contact">
+                  <Link href="https://discord.gg/FNvEtA9n">
                     <Building2 className="mr-2 h-5 w-5" />
                     導入について相談する
                   </Link>
@@ -628,10 +701,10 @@ export default function CompaniesPage() {
                   className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
                   asChild
                 >
-                  <Link href="/whitepaper">
+                  {/* <Link href="/whitepaper">
                     企業向け資料をダウンロード
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                  </Link> */}
                 </Button>
               </div>
             </motion.div>
@@ -639,6 +712,5 @@ export default function CompaniesPage() {
         </section>
       </TracingBeam>
     </div>
-  )
+  );
 }
-

@@ -1,24 +1,29 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowRight, DiscIcon as Discord, LineChart, Users } from "lucide-react"
-import Link from "next/link"
-import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowRight,
+  DiscIcon as Discord,
+  LineChart,
+  Users,
+} from "lucide-react";
+import Link from "next/link";
+import { useRef } from "react";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { BackgroundBeams } from "@/components/background-beams"
-import { TracingBeam } from "@/components/tracing-beam"
-import { GlowingStars } from "@/components/glowing-stars"
-import { WelcomeDialog } from '@/components/welcome-dialog'
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { BackgroundBeams } from "@/components/background-beams";
+import { TracingBeam } from "@/components/tracing-beam";
+import { GlowingStars } from "@/components/glowing-stars";
+import { WelcomeDialog } from "@/components/welcome-dialog";
 
 export default function Page() {
-  const targetRef = useRef<HTMLDivElement>(null)
+  const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end start"],
-  })
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div className="relative flex min-h-screen flex-col">
@@ -54,12 +59,12 @@ export default function Page() {
               <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
                 エンジニアの貢献を、
                 <br />
-                <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <span className="block pt-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                   透明な報酬に。
                 </span>
               </h1>
-              <p className="mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
-                Discordで開発に参加するだけで、報酬が手に入る。
+              <p className="block pt-5 mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
+                GitHubで協賛リポジトリの開発に参加するだけで、報酬が手に入る。
                 <br className="hidden sm:inline" />
                 ProofOfWorkDAOが、あなたの貢献を正当に評価します。
               </p>
@@ -71,12 +76,12 @@ export default function Page() {
                 className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
                 asChild
               >
-                <Link href="/connect">
+                <Link href="https://discord.gg/FNvEtA9n">
                   <Discord className="mr-2 h-5 w-5" />
                   Discordで参加する
                 </Link>
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
@@ -86,11 +91,12 @@ export default function Page() {
                   ホワイトペーパーを見る
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
 
-          <motion.div style={{ opacity }} className="w-full max-w-4xl">
+          {/* <motion.div style={{ opacity }} className="w-full max-w-4xl"> */}
+          <motion.div className="opacity-0 w-full max-w-4xl">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200/10 to-transparent" />
             <div className="mx-auto grid grid-cols-3 gap-8 px-4 py-8 text-center">
               <div>
@@ -113,7 +119,7 @@ export default function Page() {
       <TracingBeam>
         {/* DAOの概要 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -145,9 +151,12 @@ export default function Page() {
                       <Discord className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Discordで貢献</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        GitHubで貢献
+                      </h3>
                       <p className="mt-3 text-slate-400">
-                        普段通りDiscordで開発に参加するだけ。 あなたの貢献が評価対象になります。
+                        GitHubの対象リポジトリ開発に参加するだけ。
+                        あなたの貢献が評価対象になります。
                       </p>
                     </div>
                   </div>
@@ -167,8 +176,13 @@ export default function Page() {
                       <LineChart className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">スマートコントラクトが評価</h3>
-                      <p className="mt-3 text-slate-400">貢献度を自動で計算。 透明性の高い報酬システムを実現します。</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        スマートコントラクトが評価
+                      </h3>
+                      <p className="mt-3 text-slate-400">
+                        貢献度を自動で計算。
+                        透明性の高い報酬システムを実現します。
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -187,9 +201,12 @@ export default function Page() {
                       <Users className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">PoWTで即時報酬</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        PoWTで即時報酬
+                      </h3>
                       <p className="mt-3 text-slate-400">
-                        評価が確定すると即座に報酬を受け取れます。 手数料は一切かかりません。
+                        評価が確定すると即座に報酬を受け取れます。
+                        手数料は一切かかりません。
                       </p>
                     </div>
                   </div>
@@ -201,7 +218,7 @@ export default function Page() {
 
         {/* 参加方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container relative px-4">
+          <div className="container relative px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -212,7 +229,9 @@ export default function Page() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 参加方法
               </h2>
-              <p className="mt-4 text-lg text-slate-400">あなたに合った方法でProofOfWorkDAOに参加できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                あなたに合った方法でProofOfWorkDAOに参加できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               {/* エンジニア向け */}
@@ -229,7 +248,9 @@ export default function Page() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Discord className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">エンジニア</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      エンジニア
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       GitHubで開発して、
                       <br />
@@ -292,7 +313,7 @@ export default function Page() {
                       className="mt-8 w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600"
                       asChild
                     >
-                      <Link href="/connect">
+                      <Link href="https://discord.gg/FNvEtA9n">
                         Discordで参加する
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -315,9 +336,11 @@ export default function Page() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Users className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">企業</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      企業
+                    </h3>
                     <p className="mt-2 text-slate-400">
-                      手数料ゼロで、
+                      即座に世界中の
                       <br />
                       優秀なエンジニアと協業
                     </p>
@@ -354,7 +377,7 @@ export default function Page() {
                         >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
-                        Discord上で開発を管理
+                        GitHub上で開発を管理
                       </li>
                       <li className="flex items-center">
                         <svg
@@ -401,7 +424,9 @@ export default function Page() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <LineChart className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">投資家</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      投資家
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       PoWTを購入して、
                       <br />
@@ -464,8 +489,8 @@ export default function Page() {
                       className="mt-8 w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white hover:from-purple-700 hover:to-purple-600"
                       asChild
                     >
-                      <Link href="/token">
-                        取引を開始する
+                      <Link href="https://discord.gg/FNvEtA9n">
+                        Discordで参加する
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -474,11 +499,17 @@ export default function Page() {
               </motion.div>
             </div>
           </div>
+          <div className="text-white/80 underline mt-4 text-center">
+            <Link href={`/community`} className="hover:text-white/90">
+              コミュニティの詳細を確認する
+              <ArrowRight className="inline ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </section>
 
         {/* PoWTトークンの価値 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -489,7 +520,9 @@ export default function Page() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 PoWTトークンの価値
               </h2>
-              <p className="mt-4 text-lg text-slate-400">ProofOfWorkDAOの価値を体現するトークン</p>
+              <p className="mt-4 text-lg text-slate-400">
+                ProofOfWorkDAOの価値を体現するトークン
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -520,7 +553,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">エンジニア報酬</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        エンジニア報酬
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         GitHub貢献に応じて獲得できます。貢献度が高いほど、より多くのトークンを獲得できます。
                       </p>
@@ -556,7 +591,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">ガバナンス投票</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        ガバナンス投票
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         DAOの意思決定に参加できます。保有量に応じて投票権が付与されます。
                       </p>
@@ -592,7 +629,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">DEX取引</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        DEX取引
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         Uniswapで自由に取引可能。流動性を提供することで報酬も得られます。
                       </p>
@@ -602,11 +641,17 @@ export default function Page() {
               </motion.div>
             </div>
           </div>
+          <div className="text-white/80 underline mt-4 text-center">
+            <Link href={`/token`} className="hover:text-white/90">
+              PoWTの詳細を確認する
+              <ArrowRight className="inline ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </section>
 
         {/* 収益モデル */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -617,7 +662,9 @@ export default function Page() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 収益モデル
               </h2>
-              <p className="mt-4 text-lg text-slate-400">持続可能なエコシステムを実現する収益構造</p>
+              <p className="mt-4 text-lg text-slate-400">
+                持続可能なエコシステムを実現する収益構造
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-2">
               <motion.div
@@ -648,7 +695,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">取引手数料</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        取引手数料
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         DEXでの取引手数料の一部がDAOの収益となります。この収益は主にエンジニアへの報酬に充てられます。
                       </p>
@@ -685,7 +734,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">企業からの支援</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        企業からの支援
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         企業がDAOを通じて開発を依頼する際の手数料が収益となります。これにより、エコシステムの持続可能性を確保します。
                       </p>
@@ -695,11 +746,17 @@ export default function Page() {
               </motion.div>
             </div>
           </div>
+          <div className="text-white/80 underline mt-4 text-center">
+            <Link href={`/rewards`} className="hover:text-white/90">
+              収益モデルの詳細を確認する
+              <ArrowRight className="inline ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </section>
 
         {/* 従来のクラウドソーシングとの比較 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -708,9 +765,11 @@ export default function Page() {
               className="mx-auto max-w-3xl text-center"
             >
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
-                従来のクラウドソーシングとの比較
+                従来の発注・クラウドソーシングとの比較
               </h2>
-              <p className="mt-4 text-lg text-slate-400">ProofOfWorkDAOが実現する、新しい開発の形</p>
+              <p className="mt-4 text-lg text-slate-400">
+                ProofOfWorkDAOが実現する、新しい開発の形
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-2">
               <motion.div
@@ -743,7 +802,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">従来のクラウドソーシング</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        従来のクラウドソーシング
+                      </h3>
                       <ul className="mt-3 space-y-2 text-slate-400">
                         <li className="flex items-center">
                           <svg
@@ -832,7 +893,9 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">ProofOfWorkDAO</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        ProofOfWorkDAO
+                      </h3>
                       <ul className="mt-3 space-y-2 text-slate-400">
                         <li className="flex items-center">
                           <svg
@@ -849,7 +912,7 @@ export default function Page() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          手数料ゼロ
+                          開発コストの最適化
                         </li>
                         <li className="flex items-center">
                           <svg
@@ -896,7 +959,7 @@ export default function Page() {
 
         {/* FAQ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -907,7 +970,9 @@ export default function Page() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 よくある質問
               </h2>
-              <p className="mt-4 text-lg text-slate-400">ProofOfWorkDAOに関する疑問にお答えします</p>
+              <p className="mt-4 text-lg text-slate-400">
+                ProofOfWorkDAOに関する疑問にお答えします
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
               <motion.div
@@ -920,7 +985,9 @@ export default function Page() {
                 <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 transition-colors hover:border-slate-700">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(59,130,246,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative p-6">
-                    <h3 className="text-lg font-semibold text-white">どんな開発案件がありますか？</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      どんな開発案件がありますか？
+                    </h3>
                     <p className="mt-3 text-slate-400">
                       Web3プロジェクトを中心に、フロントエンド、バックエンド、スマートコントラクトなど、幅広い開発案件があります。
                       案件の詳細は、Discordで確認できます。
@@ -930,7 +997,9 @@ export default function Page() {
                 <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 transition-colors hover:border-slate-700">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(59,130,246,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative p-6">
-                    <h3 className="text-lg font-semibold text-white">報酬はどのように決まりますか？</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      報酬はどのように決まりますか？
+                    </h3>
                     <p className="mt-3 text-slate-400">
                       プルリクエストの規模、複雑さ、影響度などを総合的に評価し、スマートコントラクトが自動で報酬を計算します。
                       評価基準は完全に透明で、コミュニティによって決定されます。
@@ -940,10 +1009,12 @@ export default function Page() {
                 <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 transition-colors hover:border-slate-700">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(59,130,246,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative p-6">
-                    <h3 className="text-lg font-semibold text-white">企業として参加するメリットは？</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      企業として参加するメリットは？
+                    </h3>
                     <p className="mt-3 text-slate-400">
-                      手数料ゼロで優秀なエンジニアと協業でき、契約や支払いの手続きも最小限です。
-                      また、Web3コミュニティとの接点を持つことで、最新技術への理解も深められます。
+                      安価な手数料で、世界中の優秀なエンジニアと協業でき、契約や支払いの手続きも最小限です。
+                      また、Web3コミュニティとの接点を持つことで、最新技術への理解も深められると同時に、企業ブランディングの向上が見込まれます。
                     </p>
                   </div>
                 </Card>
@@ -954,7 +1025,7 @@ export default function Page() {
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -965,27 +1036,18 @@ export default function Page() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 新しい開発の形へ、今すぐ参加
               </h2>
-              <p className="mt-4 text-lg text-slate-400">Discordサーバーに参加するだけで、すぐに始められます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                Discordサーバーに参加するだけで、すぐに始められます
+              </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button
                   size="lg"
                   className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
                   asChild
                 >
-                  <Link href="/connect">
+                  <Link href="https://discord.gg/FNvEtA9n">
                     <Discord className="mr-2 h-5 w-5" />
                     Discordで参加する
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
-                  asChild
-                >
-                  <Link href="/contact">
-                    お問い合わせ
-                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
@@ -994,6 +1056,5 @@ export default function Page() {
         </section>
       </TracingBeam>
     </div>
-  )
+  );
 }
-

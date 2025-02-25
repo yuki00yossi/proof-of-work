@@ -1,14 +1,27 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight, CheckCircle, Code2, Github, GitPullRequest, MessageSquare, Coins } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle,
+  Code2,
+  Github,
+  GitPullRequest,
+  MessageSquare,
+  Coins,
+} from "lucide-react";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { BackgroundBeams } from "@/components/background-beams"
-import { TracingBeam } from "@/components/tracing-beam"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { BackgroundBeams } from "@/components/background-beams";
+import { TracingBeam } from "@/components/tracing-beam";
 
 export default function RewardsPage() {
   return (
@@ -52,7 +65,7 @@ export default function RewardsPage() {
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               GitHubで開発するだけで、
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block mt-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                 PoWT報酬がもらえる！
               </span>
             </h1>
@@ -86,15 +99,15 @@ export default function RewardsPage() {
               className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
               asChild
             >
-              <Link href="/guide">
+              {/* <Link href="/guide">
                 貢献ガイドを見る
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </Link> */}
             </Button>
           </motion.div>
 
           {/* 統計情報 */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -108,21 +121,23 @@ export default function RewardsPage() {
               </div>
               <div>
                 <div className="text-2xl font-bold text-white">50+</div>
-                <div className="text-sm text-slate-400">Active Contributors</div>
+                <div className="text-sm text-slate-400">
+                  Active Contributors
+                </div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-white">100+</div>
                 <div className="text-sm text-slate-400">PRs Merged</div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       <TracingBeam>
         {/* PoWT報酬の仕組み */}
-        <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+        <section className="relative w-full overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -152,9 +167,15 @@ export default function RewardsPage() {
                       <Code2 className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">PRの変更行数</h3>
-                      <p className="mt-2 text-3xl font-bold text-blue-400">50%</p>
-                      <p className="mt-3 text-sm text-slate-400">変更されたコード行数に応じて報酬が計算されます</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        PRの変更行数
+                      </h3>
+                      <p className="mt-2 text-3xl font-bold text-blue-400">
+                        50%
+                      </p>
+                      <p className="mt-3 text-sm text-slate-400">
+                        変更されたコード行数に応じて報酬が計算されます
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -173,9 +194,15 @@ export default function RewardsPage() {
                       <GitPullRequest className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">コミット数</h3>
-                      <p className="mt-2 text-3xl font-bold text-emerald-400">20%</p>
-                      <p className="mt-3 text-sm text-slate-400">継続的な貢献を評価します</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        コミット数
+                      </h3>
+                      <p className="mt-2 text-3xl font-bold text-emerald-400">
+                        20%
+                      </p>
+                      <p className="mt-3 text-sm text-slate-400">
+                        継続的な貢献を評価します
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -194,9 +221,15 @@ export default function RewardsPage() {
                       <CheckCircle className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Issue解決</h3>
-                      <p className="mt-2 text-3xl font-bold text-purple-400">20%</p>
-                      <p className="mt-3 text-sm text-slate-400">新機能開発やバグ修正の対応を評価</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        Issue解決
+                      </h3>
+                      <p className="mt-2 text-3xl font-bold text-purple-400">
+                        20%
+                      </p>
+                      <p className="mt-3 text-sm text-slate-400">
+                        新機能開発やバグ修正の対応を評価
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -215,9 +248,15 @@ export default function RewardsPage() {
                       <MessageSquare className="h-6 w-6 text-pink-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">コードレビュー</h3>
-                      <p className="mt-2 text-3xl font-bold text-pink-400">10%</p>
-                      <p className="mt-3 text-sm text-slate-400">他の開発者へのレビュー貢献を評価</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        コードレビュー
+                      </h3>
+                      <p className="mt-2 text-3xl font-bold text-pink-400">
+                        10%
+                      </p>
+                      <p className="mt-3 text-sm text-slate-400">
+                        他の開発者へのレビュー貢献を評価
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -228,7 +267,7 @@ export default function RewardsPage() {
 
         {/* 報酬の受け取りフロー */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +278,9 @@ export default function RewardsPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 報酬は自動で支払われる！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">スマートコントラクトが自動で評価・支払いを行います</p>
+              <p className="mt-4 text-lg text-slate-400">
+                スマートコントラクトが自動で評価・支払いを行います
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
               <div className="relative">
@@ -258,7 +299,9 @@ export default function RewardsPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-blue-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">GitHubで開発</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          GitHubで開発
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           プロジェクトを選び、コードを書いてPRを提出します。
                           <br />
@@ -280,7 +323,9 @@ export default function RewardsPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-emerald-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">PRがマージされる</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          PRがマージされる
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           コードレビューを通過し、PRがマージされると報酬の対象になります。
                           <br />
@@ -302,7 +347,9 @@ export default function RewardsPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-purple-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">スコアを計算</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          スコアを計算
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           スマートコントラクトが、変更行数・コミット数・Issue解決・レビューを評価。
                           <br />
@@ -324,7 +371,9 @@ export default function RewardsPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-pink-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">PoWTを受け取る</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          PoWTを受け取る
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           計算されたスコアに応じて、PoWTトークンが自動で送金されます。
                           <br />
@@ -341,7 +390,7 @@ export default function RewardsPage() {
 
         {/* GitHub連携 & 貢献方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -352,7 +401,9 @@ export default function RewardsPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 GitHub連携をして、開発に参加しよう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">3ステップで簡単に開発に参加できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                3ステップで簡単に開発に参加できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -368,7 +419,9 @@ export default function RewardsPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Github className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">GitHubを連携</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      GitHubを連携
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       GitHubアカウントを連携して、
                       <br />
@@ -399,7 +452,9 @@ export default function RewardsPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Code2 className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">プロジェクトを選択</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      プロジェクトを選択
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       興味のあるプロジェクトを選び、
                       <br />
@@ -430,7 +485,9 @@ export default function RewardsPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <GitPullRequest className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">PRを作成</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      PRを作成
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       コードを書いてPRを作成し、
                       <br />
@@ -454,7 +511,7 @@ export default function RewardsPage() {
 
         {/* FAQ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -465,10 +522,12 @@ export default function RewardsPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 よくある質問
               </h2>
-              <p className="mt-4 text-lg text-slate-400">報酬に関する疑問にお答えします</p>
+              <p className="mt-4 text-lg text-slate-400">
+                報酬に関する疑問にお答えします
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
-              <Card className="border-slate-800 bg-slate-900/50">
+              <Card className="border-slate-800 bg-slate-900/50 px-3">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-slate-800">
                     <AccordionTrigger className="text-white hover:text-white">
@@ -502,7 +561,7 @@ export default function RewardsPage() {
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -513,7 +572,9 @@ export default function RewardsPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 さあ、開発に参加してPoWTを獲得しよう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">GitHubアカウントを連携するだけで、すぐに始められます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                GitHubアカウントを連携するだけで、すぐに始められます
+              </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button
                   size="lg"
@@ -525,7 +586,7 @@ export default function RewardsPage() {
                     GitHubを連携する
                   </Link>
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   variant="outline"
                   className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
@@ -535,13 +596,12 @@ export default function RewardsPage() {
                     プロジェクトを探す
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
           </div>
         </section>
       </TracingBeam>
     </div>
-  )
+  );
 }
-

@@ -1,13 +1,21 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight, Coins, DiscIcon as Discord, LineChart, Lock, Users, Wallet } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Coins,
+  DiscIcon as Discord,
+  LineChart,
+  Lock,
+  Users,
+  Wallet,
+} from "lucide-react";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { BackgroundBeams } from "@/components/background-beams"
-import { TracingBeam } from "@/components/tracing-beam"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { BackgroundBeams } from "@/components/background-beams";
+import { TracingBeam } from "@/components/tracing-beam";
 
 export default function TokenPage() {
   return (
@@ -51,11 +59,11 @@ export default function TokenPage() {
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               PoWT：エンジニアの貢献が
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block mt-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                 価値になるトークン
               </span>
             </h1>
-            <p className="mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
+            <p className="block mt-5 mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
               ProofOfWorkDAOが発行する「PoWT」は、エンジニアの開発貢献に応じて配布されるガバナンストークンです。
               <br className="hidden sm:inline" />
               オープンで透明なエコシステムを支える基盤となるトークンです。
@@ -74,7 +82,7 @@ export default function TokenPage() {
               className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
               asChild
             >
-              <Link href="/connect">
+              <Link href="https://discord.gg/FNvEtA9n">
                 <Discord className="mr-2 h-5 w-5" />
                 Discordで開発する
               </Link>
@@ -93,7 +101,7 @@ export default function TokenPage() {
           </motion.div>
 
           {/* 統計情報 */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -114,14 +122,14 @@ export default function TokenPage() {
                 <div className="text-sm text-slate-400">Active Holders</div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       <TracingBeam>
         {/* PoWTの活用方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +159,9 @@ export default function TokenPage() {
                       <Discord className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">エンジニア報酬</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        エンジニア報酬
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         Discordでコードを貢献すると、PoWTが自動的に支払われます。貢献度が高いほど、より多くのトークンを獲得できます。
                       </p>
@@ -173,7 +183,9 @@ export default function TokenPage() {
                       <Users className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">ガバナンス投票</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        ガバナンス投票
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         DAOの意思決定に参加できます。保有量に応じて投票権が付与され、プロジェクトの方向性を決定できます。
                       </p>
@@ -195,7 +207,9 @@ export default function TokenPage() {
                       <LineChart className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">DEX取引</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        DEX取引
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         Uniswapで自由に取引可能。流動性を提供することで追加の報酬も得られます。
                       </p>
@@ -209,7 +223,7 @@ export default function TokenPage() {
 
         {/* PoWTの入手方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +234,9 @@ export default function TokenPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 PoWTを獲得するには？
               </h2>
-              <p className="mt-4 text-lg text-slate-400">複数の方法でPoWTトークンを入手できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                複数の方法でPoWTトークンを入手できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -236,7 +252,9 @@ export default function TokenPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Discord className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">開発で貢献</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      開発で貢献
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       Discordで開発に参加して、
                       <br />
@@ -320,7 +338,9 @@ export default function TokenPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Wallet className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">DEXで購入</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      DEXで購入
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       Uniswapで直接、
                       <br />
@@ -404,7 +424,9 @@ export default function TokenPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <LineChart className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">流動性提供</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      流動性提供
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       流動性プールに参加して、
                       <br />
@@ -481,7 +503,7 @@ export default function TokenPage() {
 
         {/* トークン配分（Tokenomics） */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -507,8 +529,12 @@ export default function TokenPage() {
                 <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 p-6 transition-colors hover:border-slate-700">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(59,130,246,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative">
-                    <h3 className="text-xl font-semibold text-white">総供給量</h3>
-                    <p className="mt-2 text-4xl font-bold text-blue-400">100,000,000 PoWT</p>
+                    <h3 className="text-xl font-semibold text-white">
+                      総供給量
+                    </h3>
+                    <p className="mt-2 text-4xl font-bold text-blue-400">
+                      100,000,000 PoWT
+                    </p>
                     <div className="mt-4 space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-slate-400">エンジニア報酬</span>
@@ -544,12 +570,16 @@ export default function TokenPage() {
                 <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 p-6 transition-colors hover:border-slate-700">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(16,185,129,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative">
-                    <h3 className="text-xl font-semibold text-white">ベスティングスケジュール</h3>
+                    <h3 className="text-xl font-semibold text-white">
+                      ベスティングスケジュール
+                    </h3>
                     <div className="mt-6 space-y-6">
                       <div>
                         <div className="flex items-center gap-2">
                           <Lock className="h-5 w-5 text-emerald-500" />
-                          <h4 className="font-medium text-white">チーム・アドバイザー</h4>
+                          <h4 className="font-medium text-white">
+                            チーム・アドバイザー
+                          </h4>
                         </div>
                         <p className="mt-2 text-slate-400">
                           立ち上げから12ヶ月のロック期間後、36ヶ月かけて直線的にアンロック
@@ -558,14 +588,20 @@ export default function TokenPage() {
                       <div>
                         <div className="flex items-center gap-2">
                           <Lock className="h-5 w-5 text-emerald-500" />
-                          <h4 className="font-medium text-white">エコシステム開発</h4>
+                          <h4 className="font-medium text-white">
+                            エコシステム開発
+                          </h4>
                         </div>
-                        <p className="mt-2 text-slate-400">6ヶ月のロック期間後、24ヶ月かけて四半期ごとにアンロック</p>
+                        <p className="mt-2 text-slate-400">
+                          6ヶ月のロック期間後、24ヶ月かけて四半期ごとにアンロック
+                        </p>
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
                           <Lock className="h-5 w-5 text-emerald-500" />
-                          <h4 className="font-medium text-white">流動性プール</h4>
+                          <h4 className="font-medium text-white">
+                            流動性プール
+                          </h4>
                         </div>
                         <p className="mt-2 text-slate-400">
                           立ち上げ時に30%をロック解除、残りは24ヶ月かけて直線的にアンロック
@@ -581,7 +617,7 @@ export default function TokenPage() {
 
         {/* コントラクト情報 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -592,18 +628,28 @@ export default function TokenPage() {
               <Card className="group relative overflow-hidden border-slate-800 bg-slate-900/50 p-6 transition-colors hover:border-slate-700">
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(59,130,246,0.1)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="relative">
-                  <h3 className="text-xl font-semibold text-white">コントラクト情報</h3>
+                  <h3 className="text-xl font-semibold text-white">
+                    コントラクト情報
+                  </h3>
                   <div className="mt-4 space-y-4">
                     <div>
-                      <div className="text-sm font-medium text-slate-400">コントラクトアドレス</div>
-                      <code className="mt-1 block rounded bg-slate-800 p-2 text-sm text-slate-200">0x1234...5678</code>
+                      <div className="text-sm font-medium text-slate-400">
+                        コントラクトアドレス
+                      </div>
+                      <code className="mt-1 block rounded bg-slate-800 p-2 text-sm text-slate-200">
+                        0x1234...5678
+                      </code>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-slate-400">ネットワーク</div>
+                      <div className="text-sm font-medium text-slate-400">
+                        ネットワーク
+                      </div>
                       <div className="mt-1 text-white">Arbitrum</div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-slate-400">規格</div>
+                      <div className="text-sm font-medium text-slate-400">
+                        規格
+                      </div>
                       <div className="mt-1 text-white">ERC-20</div>
                     </div>
                     <Button
@@ -624,7 +670,7 @@ export default function TokenPage() {
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -635,7 +681,9 @@ export default function TokenPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 今すぐPoWTを手に入れよう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">Discordサーバーに参加するだけで、すぐに始められます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                Discordサーバーに参加するだけで、すぐに始められます
+              </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button
                   size="lg"
@@ -664,6 +712,5 @@ export default function TokenPage() {
         </section>
       </TracingBeam>
     </div>
-  )
+  );
 }
-

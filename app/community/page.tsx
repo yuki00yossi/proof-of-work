@@ -1,14 +1,27 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight, DiscIcon as Discord, Github, MessageSquare, Twitter, Users, Vote } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  DiscIcon as Discord,
+  Github,
+  MessageSquare,
+  Twitter,
+  Users,
+  Vote,
+} from "lucide-react";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { BackgroundBeams } from "@/components/background-beams"
-import { TracingBeam } from "@/components/tracing-beam"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { BackgroundBeams } from "@/components/background-beams";
+import { TracingBeam } from "@/components/tracing-beam";
 
 export default function CommunityPage() {
   return (
@@ -49,14 +62,14 @@ export default function CommunityPage() {
                 </div>
               </span>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="block pt-5 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               ProofOfWorkDAOの未来を、
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block mt-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                 あなたの投票で決める！
               </span>
             </h1>
-            <p className="mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
+            <p className="block mt-5 mx-auto max-w-[700px] text-base text-slate-300 md:text-lg lg:text-xl">
               ProofOfWorkDAOは、完全に分散化された開発者主導のエコシステムです。
               <br className="hidden sm:inline" />
               PoWTトークンを保有することで、DAOの重要な決定に投票できます。
@@ -75,12 +88,12 @@ export default function CommunityPage() {
               className="h-12 bg-gradient-to-r from-blue-600 to-emerald-600 px-6 text-white hover:from-blue-700 hover:to-emerald-700"
               asChild
             >
-              <Link href="/connect">
+              <Link href="https://discord.gg/FNvEtA9n">
                 <Discord className="mr-2 h-5 w-5" />
                 Discordに参加する
               </Link>
             </Button>
-            <Button
+            {/* <Button
               size="lg"
               variant="outline"
               className="h-12 border-slate-700 bg-slate-900/50 px-6 text-white backdrop-blur hover:bg-slate-900/80"
@@ -90,11 +103,11 @@ export default function CommunityPage() {
                 最新の投票を確認する
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* 統計情報 */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -115,14 +128,14 @@ export default function CommunityPage() {
                 <div className="text-sm text-slate-400">PoWT Staked</div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       <TracingBeam>
         {/* DAOのガバナンスとは？ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +146,9 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOの運営は、PoWT保有者によって決まる
               </h2>
-              <p className="mt-4 text-lg text-slate-400">DAOの重要な決定は、すべてコミュニティの投票で決定されます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                DAOの重要な決定は、すべてコミュニティの投票で決定されます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -150,7 +165,9 @@ export default function CommunityPage() {
                       <Vote className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">分散型意思決定</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        分散型意思決定
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         PoWTを持つ全員が投票に参加でき、DAOの意思決定に関わることができます。
                       </p>
@@ -172,7 +189,9 @@ export default function CommunityPage() {
                       <Github className="h-6 w-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">透明性のある運営</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        透明性のある運営
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         提案と投票結果はすべて公開され、スマートコントラクトで自動実行されます。
                       </p>
@@ -194,7 +213,9 @@ export default function CommunityPage() {
                       <MessageSquare className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">継続的な改善</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        継続的な改善
+                      </h3>
                       <p className="mt-3 text-slate-400">
                         コミュニティの意見を反映し、プロジェクトを継続的に進化させていきます。
                       </p>
@@ -208,7 +229,7 @@ export default function CommunityPage() {
 
         {/* PoWTを使った意思決定の流れ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +240,9 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 PoWTを使って、DAOの未来を決めよう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">投票プロセスは完全に透明で、誰でも参加できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                投票プロセスは完全に透明で、誰でも参加できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
               <div className="relative">
@@ -238,7 +261,9 @@ export default function CommunityPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-blue-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">提案が投稿される</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          提案が投稿される
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           誰でも新しい提案を投稿できます。
                           <br />
@@ -260,7 +285,9 @@ export default function CommunityPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-emerald-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">コミュニティで議論</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          コミュニティで議論
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           Discord & フォーラムで提案について議論します。
                           <br />
@@ -282,7 +309,9 @@ export default function CommunityPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-purple-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">Snapshotで投票</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          Snapshotで投票
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           PoWT保有者が投票権を持ち、Snapshot上で投票を行います。
                           <br />
@@ -304,7 +333,9 @@ export default function CommunityPage() {
                         <div className="absolute -inset-1 animate-pulse rounded-full bg-pink-500/20 blur-sm" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">決定事項が実行される</h3>
+                        <h3 className="text-lg font-semibold text-white">
+                          決定事項が実行される
+                        </h3>
                         <p className="mt-2 text-slate-400">
                           投票で承認された提案は、スマートコントラクトによって自動実行されます。
                           <br />
@@ -321,7 +352,7 @@ export default function CommunityPage() {
 
         {/* コミュニティ活動 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -332,7 +363,9 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOのコミュニティに参加しよう！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">さまざまな方法でDAOの活動に参加できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                さまざまな方法でDAOの活動に参加できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -348,7 +381,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Discord className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">Discordで議論</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      Discordで議論
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       エンジニア・投資家・企業が
                       <br />
@@ -379,7 +414,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Twitter className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">最新情報をチェック</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      最新情報をチェック
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       プロジェクトの進捗や
                       <br />
@@ -410,7 +447,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <MessageSquare className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">フォーラムで提案</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      フォーラムで提案
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       新機能・方針に関する
                       <br />
@@ -434,7 +473,7 @@ export default function CommunityPage() {
 
         {/* 参加方法 */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -445,7 +484,9 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 あなたに合った関わり方を見つけよう
               </h2>
-              <p className="mt-4 text-lg text-slate-400">それぞれの立場に合わせて、DAOに参加できます</p>
+              <p className="mt-4 text-lg text-slate-400">
+                それぞれの立場に合わせて、DAOに参加できます
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
               <motion.div
@@ -461,7 +502,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                       <Github className="h-6 w-6 text-blue-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">エンジニア</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      エンジニア
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       GitHubで開発し、
                       <br />
@@ -492,7 +535,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10">
                       <Vote className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">投資家</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      投資家
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       PoWTを保有し、
                       <br />
@@ -523,7 +568,9 @@ export default function CommunityPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10">
                       <Users className="h-6 w-6 text-purple-500" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-white">企業</h3>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      企業
+                    </h3>
                     <p className="mt-2 text-slate-400">
                       開発リソースを活用し、
                       <br />
@@ -547,7 +594,7 @@ export default function CommunityPage() {
 
         {/* FAQ */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -558,10 +605,12 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 よくある質問
               </h2>
-              <p className="mt-4 text-lg text-slate-400">ガバナンスやコミュニティ参加に関する疑問にお答えします</p>
+              <p className="mt-4 text-lg text-slate-400">
+                ガバナンスやコミュニティ参加に関する疑問にお答えします
+              </p>
             </motion.div>
             <div className="mx-auto mt-16 max-w-3xl">
-              <Card className="border-slate-800 bg-slate-900/50">
+              <Card className="border-slate-800 bg-slate-900/50 px-3">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-slate-800">
                     <AccordionTrigger className="text-white hover:text-white">
@@ -595,7 +644,7 @@ export default function CommunityPage() {
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
-          <div className="container px-4">
+          <div className="container px-4 mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -606,7 +655,9 @@ export default function CommunityPage() {
               <h2 className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                 ProofOfWorkDAOの未来を、あなたの手で！
               </h2>
-              <p className="mt-4 text-lg text-slate-400">コミュニティに参加して、DAOの成長に貢献しましょう</p>
+              <p className="mt-4 text-lg text-slate-400">
+                コミュニティに参加して、DAOの成長に貢献しましょう
+              </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button
                   size="lg"
@@ -635,6 +686,5 @@ export default function CommunityPage() {
         </section>
       </TracingBeam>
     </div>
-  )
+  );
 }
-
